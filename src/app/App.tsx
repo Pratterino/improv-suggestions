@@ -25,7 +25,7 @@ function App() {
     }, []);
 
     useEffect(() => {
-        speak(suggestion, {force: false});
+        setTimeout(() => speak(suggestion, {force: false}), 1);
     }, [suggestion]);
 
     function speak(word: string, {force = false}) {
