@@ -1,0 +1,80 @@
+$backgroundColor: #e3e2df;
+$textColor: #ee4c7c;
+$inactiveColor: #a98e87;
+$padding: 20px;
+
+* {
+  font-family: 'Cormorant', serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background: $backgroundColor;
+}
+
+h1 {
+  @media (max-width: 1020px) {
+    word-wrap: break-spaces;
+    font-size: 60pt;
+    text-align: center;
+  }
+  font-size: 8vw;
+
+  &:hover {
+    cursor: url('../img/volume-up.png') 2 2, pointer;
+  }
+}
+
+.suggestion__statistics {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 100vh;
+  position: relative;
+  max-width: 80%;
+  margin: 0 auto;
+  flex-direction: column;
+
+  .suggestion-container {
+    color: $textColor;
+    text-transform: capitalize;
+  }
+
+  .suggestion-container__buttons {
+    margin-top: $padding;
+    padding: $padding/2;
+  }
+}
+
+button {
+  margin: 0 $padding/2;
+  padding: $padding;
+  color: $textColor;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  background: transparent;
+  border: 2px solid $textColor;
+  border-radius: 6px;
+  display: inline-block;
+  transition: all 0.2s ease 0s;
+
+  &.inactive {
+    border-color: $inactiveColor;
+    color: $inactiveColor;
+  }
+
+  &:hover {
+    background-color: #F3f3f3;
+  }
+}
