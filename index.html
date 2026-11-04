@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#e3e2df">
+    <title>Improv suggestions [🇸🇪]</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="manifest" href="manifest.json">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cormorant&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="app.js"></script>
+</head>
+<body>
+    <svg hidden>
+        <symbol id="icon-new" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.3-5.7L20 8.5M20 3.5v5h-5"/></symbol>
+        <symbol id="icon-sound" viewBox="0 0 24 24"><path d="M4 9.5v5h3.5L12 18.5V5.5L7.5 9.5zM15.5 9a4 4 0 0 1 0 6M18 6.5a8 8 0 0 1 0 11"/></symbol>
+        <symbol id="icon-mute" viewBox="0 0 24 24"><path d="M4 9.5v5h3.5L12 18.5V5.5L7.5 9.5zM16 9.5l5 5M21 9.5l-5 5"/></symbol>
+    </svg>
+
+    <main class="container">
+        <p class="statistics" id="statistics"></p>
+
+        <ul class="suggestions" id="suggestions" data-count="1" aria-live="polite"></ul>
+
+        <div class="controls">
+            <fieldset class="count">
+                <legend>Antal förslag</legend>
+                <label><input type="radio" name="count" value="1" checked><span>1</span></label>
+                <label><input type="radio" name="count" value="2"><span>2</span></label>
+                <label><input type="radio" name="count" value="3"><span>3</span></label>
+            </fieldset>
+            <button type="button" id="new"><svg class="icon"><use href="#icon-new"/></svg> Nytt förslag</button>
+            <button type="button" id="mute"></button>
+        </div>
+
+        <p class="note" id="voice-note" hidden>Den här enheten verkar inte ha någon svensk röst, så uppläsningen kan låta konstig.</p>
+    </main>
+
+    <noscript>Sidan behöver JavaScript för att fungera.</noscript>
+</body>
+</html>

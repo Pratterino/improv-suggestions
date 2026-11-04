@@ -1,0 +1,196 @@
+:root {
+    --background: #e3e2df;
+    --text: #ee4c7c;
+    --inactive: #a98e87;
+}
+
+* {
+    font-family: 'Cormorant', serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+html, body {
+    background: var(--background);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 80%;
+    min-height: 100vh;
+    min-height: 100dvh;
+    margin: 0 auto;
+    padding: 60px 0 20px;
+}
+
+.statistics {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px;
+}
+
+.suggestions {
+    --word-size: 8vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25em;
+    max-width: 100%;
+    font-size: var(--word-size);
+    list-style: none;
+}
+
+.suggestions[data-count="2"] {
+    --word-size: 7vw;
+}
+
+.suggestions[data-count="3"] {
+    --word-size: 6vw;
+}
+
+@media (max-width: 1020px) {
+    .suggestions {
+        --word-size: 60pt;
+    }
+
+    .suggestions[data-count="2"] {
+        --word-size: 44pt;
+    }
+
+    .suggestions[data-count="3"] {
+        --word-size: 36pt;
+    }
+}
+
+.suggestions li {
+    max-width: 100%;
+}
+
+button.word {
+    display: block;
+    max-width: 100%;
+    padding: 0;
+    border: 0;
+    font-family: inherit;
+    font-size: var(--word-size);
+    line-height: 1.2;
+    text-align: center;
+    text-transform: capitalize;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+    cursor: url('img/volume-up.png') 2 2, pointer;
+}
+
+button.word:hover {
+    background: transparent;
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 16px 20px;
+    margin-top: 30px;
+}
+
+button,
+.count span,
+.count legend {
+    color: var(--text);
+    font-family: 'Roboto', sans-serif;
+    font-size: 13.333px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+button,
+.count span {
+    background: transparent;
+    border: 2px solid var(--text);
+    border-radius: 6px;
+    transition: all 0.2s ease 0s;
+}
+
+button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 20px;
+    cursor: pointer;
+}
+
+button.inactive {
+    border-color: var(--inactive);
+    color: var(--inactive);
+}
+
+button:hover,
+.count input:not(:checked) + span:hover {
+    background-color: #f3f3f3;
+}
+
+button:focus-visible,
+.count input:focus-visible + span {
+    outline: 2px solid #000;
+    outline-offset: 2px;
+}
+
+.icon {
+    width: 1.2em;
+    height: 1.2em;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.count {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border: 0;
+}
+
+.count legend {
+    float: left;
+    margin-right: 6px;
+}
+
+.count label {
+    position: relative;
+    cursor: pointer;
+}
+
+.count input {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.count span {
+    display: block;
+    padding: 20px;
+}
+
+.count input:checked + span {
+    background: var(--text);
+    color: #fff;
+}
+
+.note {
+    margin-top: 20px;
+    font-size: 18px;
+    text-align: center;
+}
