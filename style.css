@@ -188,9 +188,3 @@ button:focus-visible,
     background: var(--text);
     color: #fff;
 }
-
-.note {
-    margin-top: 20px;
-    font-size: 18px;
-    text-align: center;
-}
